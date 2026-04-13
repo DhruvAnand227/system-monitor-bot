@@ -1,0 +1,13 @@
+# Dependency folders
+node_modules/
+
+# Local config and credentials
+.env
+config.json
+
+# Build files
+*.exe
+
+# OS generated files
+.DS_Store
+Thumbs.db
