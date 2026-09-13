@@ -68,7 +68,7 @@ bot.command('status', async (ctx) => {
     const userData = await User.findOne({ telegramId: userId });
 
     if (!userData) {
-        return ctx.reply("Bhai, tera koi PC registered nahi hai. Agent script chalao!");
+        return ctx.reply("Your system is not registered. Run agent script first!");
     }
 
     const msg = `🖥️ <b>PC Name:</b> ${userData.pcName}\n` +
@@ -84,7 +84,7 @@ bot.command('add', (ctx) => {
     const code = Math.floor(100000 + Math.random() * 900000).toString(); // 6 digit random code
     pairingCodes[code] = ctx.chat.id.toString(); // Code ko User ID se link kar diya
 
-    ctx.reply(`Tera Pairing Code hai: ${code}\n\nIsko Agent script mein daal de. Ye 5 min mein expire ho jayega!`);
+    ctx.reply(`Your pairing code is: ${code}\n\n Copy-Paste it in agent.js. The code will expire in 5 minutes`);
 
     // 5 min baad code delete kar do (Security)
     setTimeout(() => { delete pairingCodes[code]; }, 300000);
