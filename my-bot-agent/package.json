@@ -3,8 +3,9 @@
   "type": "module",
   "version": "1.0.0",
   "main": "agent.js",
+  "bin": "agent.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "pkg agent.js --targets node18-win-x64 --output system-monitor.exe"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,9 @@
   "dependencies": {
     "axios": "^1.14.0",
     "systeminformation": "^5.31.5"
+  },
+  "pkg": {
+    "scripts": "agent.js",
+    "assets": []
   }
 }
